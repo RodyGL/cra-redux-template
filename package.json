@@ -1,14 +1,11 @@
 {
-  "name": "lost-legacy",
+  "name": "cra-template",
   "version": "1.0.0",
-  "description": "Lost Legacy The Board Game",
+  "description": "CRA Template",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "Lost",
-    "Legacy"
-  ],
+  "keywords": [],
   "author": "RodyGL",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "3.6.0",
