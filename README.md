@@ -1,1 +1,3 @@
-# Lost Legacy
+# React Template
+
+CRA - Redux - Redux Saga
