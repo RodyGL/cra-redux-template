@@ -1,0 +1,31 @@
+{
+  /* ESLint options */
+  "eslint.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.workingDirectories": [
+    "react-app",
+    "functions"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  /* JSHint options */
+  "jshint.options": {
+    "esversion": 9
+  },
+
+  /* Project config */
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/lib": true
+  },
+
+  "advancedNewFile.exclude": {
+    "node_modules": true,
+    "build": true,
+    "lib": true
+  },
+  "explorer.compactFolders": false
+}
