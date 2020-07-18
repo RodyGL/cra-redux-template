@@ -2,7 +2,7 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from '@/App';
-import { configureStore } from '@/store';
+import configureStore from '@/store';
 import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();

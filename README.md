@@ -1,3 +1,3 @@
 # React Template
 
-CRA - Redux - Redux Saga
+CRA - Redux

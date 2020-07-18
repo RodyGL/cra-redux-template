@@ -1,20 +1,28 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, combineReducers, Dispatch } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import createSagaMiddleware from 'redux-saga';
-import rootReducer from './reducers';
-import rootSaga from './sagas';
 
-export const configureStore = () => {
-  const sagaMiddleware = createSagaMiddleware();
+declare module 'react-redux' {
+  export function useDispatch<TDispatch = Dispatch<StoreEvent>>(): TDispatch;
+  export function useDispatch<A extends StoreEvent = StoreEvent>(): Dispatch<A>;
 
-  const middlewares = [sagaMiddleware];
-  const middlewareEnhancer = applyMiddleware(...middlewares);
+  export function useSelector<TState = Store, TSelected = unknown>(
+    selector: (state: TState) => TSelected,
+    equalityFn?: (left: TSelected, right: TSelected) => boolean
+  ): TSelected;
+}
 
-  const enhancers = [middlewareEnhancer];
-  const composedEnhancers = composeWithDevTools(...enhancers);
+interface Store {}
 
-  const store = createStore(rootReducer, composedEnhancers);
-  sagaMiddleware.run(rootSaga);
+type StoreEvent = unknown;
+
+const configureStore = () => {
+  const composedEnhancers = composeWithDevTools();
+  const store = createStore(
+    combineReducers(() => ({})),
+    composedEnhancers
+  );
 
   return store;
 };
+
+export default configureStore;
